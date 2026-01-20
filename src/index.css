@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import "@fontsource/inter/300.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css"; */
+
+@layer base {
+  html {
+    font-family: "Inter", system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+}
+
+.noto-kufi {
+  font-family: "Noto Kufi Arabic", sans-serif;
+  font-optical-sizing: auto;
+  word-spacing: 0.3em;
+
+  line-height: 2; /* Spasi antara baris */
+
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+body {
+  @apply bg-gray-50 text-gray-900 antialiased;
+}
+
+@layer components {
+  .text-header-arabic {
+    @apply font-kufi text-[45px] lg:text-[80px] font-semibold tracking-[-2px] lg:tracking-[-2.5px] leading-[50px] lg:leading-[88px] text-left whitespace-pre-wrap [word-spacing:0px];
+  }
+  .text-header {
+    @apply font-inter
+    text-[32px]        /* default: mobile */
+    font-semibold
+    tracking-[-1.5px]
+    leading-[38px]
+    text-left
+    whitespace-pre-wrap
+    [word-spacing:0px]
+    md:text-[55px]     /* tablet */
+    md:tracking-[-2px]
+    md:leading-[60px]
+    lg:text-[80px]     /* desktop besar */
+    lg:tracking-[-2.5px]
+    lg:leading-[88px];
+  }
+  .text-span {
+    @apply text-[0.8em] font-semibold;
+  }
+  .rounded-custom {
+    @apply rounded-[30px] lg:rounded-[70px];
+  }
+  .section-container {
+    @apply w-full flex flex-col;
+  }
+  .text-title {
+    @apply text-5xl lg:text-7xl font-semibold;
+  }
+  .text-desc {
+    @apply text-lg leading-relaxed;
+  }
+  .text-h1 {
+    @apply text-3xl lg:text-7xl font-semibold;
+  }
+  .text-h2 {
+    @apply text-3xl lg:text-5xl font-semibold;
+  }
+  .text-h3 {
+    @apply text-2xl lg:text-4xl font-semibold;
+  }
+  .text-h4 {
+    @apply text-2xl lg:text-4xl font-semibold;
+  }
+  .card-custom {
+    @apply relative z-10
+    bg-white
+    rounded-t-3xl
+
+    -mt-16         /* default mobile */
+    p-6            /* default padding */
+
+    sm:-mt-20      /* small screen */
+    sm:p-8
+
+    md:-mt-28      /* medium screen */
+    md:p-16
+
+    lg:-mt-42      /* large desktop */
+    lg:p-32
+    lg:flex-row
+    lg:gap-12;
+  }
+  .btn-frow {
+    @apply flex items-center gap-4 px-4 py-2 rounded;
+  }
+
+  .text-custom {
+    @apply tracking-widest;
+  }
+
+  .btn-secondary {
+    @apply border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors;
+  }
+}
